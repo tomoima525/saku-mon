@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "saku-mon"
+version = "0.1.0"
+description = "A library to generate coding tests from GitHub repositories"
+authors = ["Tomoaki Imai <tomoima525@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+openai = "^1.54.4"
+gitpython = "^3.1.43"
+python-dotenv = "^1.0.1"
+pydantic = "^2.9.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
