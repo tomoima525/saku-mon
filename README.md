@@ -8,18 +8,28 @@ Saku-mon is a Japanese word that means "to make a question".
 - Install [poetry](https://python-poetry.org/docs/#installation) (Python package manager) for managing dependencies.
 - Run `poetry install` to install dependencies.
 - Run `poetry shell` to activate the virtual environment.
-- Setup `.env` file for Open AI key (see `.env.example` for reference).
+- Setup `.env` file for Open AI key and GitHub API key (see `.env.example` for reference).
+  - GITHB_API_KEY is only required if you want to access private repositories. Make sure that the key has the necessary permissions. (see [Creating a fine-grained personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token))
 
 # Usage
 
 - Run `python main.py` to generate coding tests from a given github repository.
+  - `--force-clone` flag can be used to force clone the repository(Remove the local repository).
 
 Example output:
 
 ```bash
 $ python main.py
-Repository already cloned to /Users/tomoima525/workspace/python/saku-mon/repo/elastic-ip-lambda
-Project type: typescript
+Enter the GitHub repo owner/repo_name: knot-inc/english-analysis-exps
+GitHub user: tomoima525
+Cloning repository ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2411k    0 2411k    0     0  2815k      0 --:--:-- --:--:-- --:--:-- 2813k
+Repository cloned to /Users/tomoima525/workspace/python/saku-mon/repo/english-analysis-exps
+Checking project type for /Users/tomoima525/workspace/python/saku-mon/repo/english-analysis-exps
+ as True
+Project type: python
 Select a coding test idea:
 1. Implement a script to automate the process of setting up a NAT instance with Elastic IP in a VPC environment, ensuring the script handles subnet configurations and routing tables appropriately.
 2. Create a function that verifies the setup of a static IP for AWS Lambda using a NAT instance by checking the routing and security group settings, and ensures the Lambda function can access external services like a REST API.
@@ -42,7 +52,7 @@ Generating example solution...
 # Future Works
 
 - Support for other LLM models like llama, claude, etc.
-- Support for private repositories.
+- Support for private repositories using API key.
 - Support for various programming languages.
 - Support for adding extra constraints to the generated questions.
 
