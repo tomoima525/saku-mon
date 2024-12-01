@@ -9,7 +9,7 @@ Saku-mon is a Japanese word that means "to make a question".
 - Run `poetry install` to install dependencies.
 - Run `poetry shell` to activate the virtual environment.
 - Setup `.env` file for Open AI key and GitHub API key (see `.env.example` for reference).
-  - GITHB_API_KEY is only required if you want to access private repositories. Make sure that the key has the necessary permissions.
+  - GITHB_API_KEY is only required if you want to access private repositories. Make sure that the key has the necessary permissions. (see [Creating a fine-grained personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token))
 
 # Usage
 
